@@ -11,7 +11,7 @@ questions.config(function($routeProvider){
 	})
 	.when('/question/:id', {
 		templateUrl: 'views/partials/question.html',
-		controller: 'Question'
+		controller: 'Answers'
 	})
 	.when('/question/:id/new_answer', {
 		templateUrl: 'views/partials/new_answer.html',

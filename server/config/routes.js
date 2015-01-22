@@ -10,7 +10,12 @@ module.exports = function Routes(app){
 	app.post('/add_question', function(req, res){
 		questions.add_question(req, res);
 	});
-
+	app.get('/get_answers/:id', function(req, res){
+		questions.get_answers(req, res);
+	});
+	app.get('/get_question/:id', function(req, res){
+		questions.get_question(req, res);
+	});
 
 	// app.get('/get_pictures', function(req, res){
 	// 	dash.get_pictures(req, res);

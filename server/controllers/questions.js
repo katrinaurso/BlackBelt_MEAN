@@ -23,6 +23,24 @@ module.exports = {
 				res.send(result._id);
 			}
 		});
+	},
+	get_answers: function(req, res){
+		Question.find({_id : req.params.id }, function(err, results){
+			if(err){
+				res.send(err);
+			} else {
+				res.send(results);
+			}
+		});
+	},
+	get_question: function(req, res){
+		Question.find({_id : req.params.id }, function(err, results){
+			if(err){
+				res.send(err);
+			} else {
+				res.send(results);
+			}
+		});
 	}
 
 	// get_pictures: function(req, res){

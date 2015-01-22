@@ -12,7 +12,7 @@
             <tr ng-repeat="question in questions | filter: filter_question | orderBy: 'created_at'"> 
               <td ng-bind="question.question"></td>
               <td ng-bind="question.answers.length">3</td>
-              <td><a href="#">Show</a> <a href="#">Answer</a></td>
+              <td><a href="#/question/{{question._id}}">Show</a> <a href="#/question/{{question._id}}/new_answer">Answer</a></td>
             </tr>
           </tbody>
       </table>

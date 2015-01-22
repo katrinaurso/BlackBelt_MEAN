@@ -1,0 +1,10 @@
+    <div ng-controller="NewAnswer">
+      <h1 ng-bind="question.question"></h1>
+      <h4 ng-bind="question.description"></h4>
+      <form ng-submit="addAnswer({{question._id}})">
+        <p>Your Answer: <textarea ng-model="new_answer.answer"></textarea></p>
+        <p>Supporting details for your answer: (optional) <textarea ng-model="new_answer.details"></textarea></p>
+        <button ng-href="#/">Cancel</button>
+        <input type="submit" value="Submit">
+      </form>
+    </div>

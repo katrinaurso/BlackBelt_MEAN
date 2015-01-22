@@ -8,70 +8,17 @@ questions.controller('Home', function($scope, HomeFactory){
 questions.controller('NewQuestion', function($scope, NewQuestionFactory){
 	$scope.addQuestion = function(){
 		NewQuestionFactory.addQuestion($scope.new_question);
-		// $location.path('/');
-		// 	console.log($scope.new_question);
 	};
-	// $scope.errors = NewContactFactory.getErrors();
 });
 
-// dashboard.controller('Main', function($scope, MainFactory){
-// 	MainFactory.getContacts(function(data){
-// 		var array = data;
-// 		var pictures = [];
-// 		for(var i=0; i<8; i++){
-// 			var random = Math.floor(Math.random()*array.length);
-// 			pictures.push(array[random]);
-// 			array.splice(random, 1);
-// 		}
-// 		$scope.contacts = pictures;
-// 	});
-// 	MainFactory.getTasks(function(data){
-// 		var tasks= [];
-// 		var task = {};
-// 		var action_plan = [];
-// 		var reminders = [];
-// 		for(var i=0; i<data.length; i++){
-// 			if(data[i].tasks.length > 0){
-// 				for(var k=0; k<data[i].tasks.length; k++){
-// 					tasks.push(data[i].tasks[k]);
-// 				}
-// 			}
-// 		}
-// 		for(var j=0; j<tasks.length; j++){
-// 			if(tasks[j].deadline >= "2015-01-20" && tasks[j].deadline < "2015-01-23") {
-// 				action_plan.push(tasks[j]);
-// 			} else if(tasks[j].deadline >= "2015-01-23") {
-// 				reminders.push(tasks[j]);
-// 			}
-// 		}
-// 		$scope.reminders = reminders;
-// 		$scope.action_plan = action_plan;
-// 	});
-// });
+questions.controller('Answers', function($scope, $routeParams, AnswerFactory){
+	AnswerFactory.getAnswers($routeParams.id, function(data){
+		$scope.answers = data;
+	});
+});
 
-// dashboard.controller('MyContact', function($scope, $routeParams, $location, MyContactFactory){
-// 	MyContactFactory.getContactInfo($routeParams.id, function(data){
-// 		$scope.contact = data;
-// 		$scope.tasks = data.tasks;
-// 		tasks = data.tasks;
-// 	});
-// 	$scope.addTask = function(id){
-// 		MyContactFactory.addTask(id, $scope.new_task);
-// 		$location.path('/');
-// 	};
-// });
-
-// dashboard.controller('EditContact', function($scope, $routeParams, $location, EditContactFactory){
-// 	EditContactFactory.getContactInfo($routeParams.id, function(data){
-// 		$scope.contact = data;
-// 	});
-// 	$scope.editContact = function(id){
-// 		console.log(id);
-// 		EditContactFactory.editContact(id, $scope.edit_contact);
-// 		$location.path('/contact/'+id);
-// 	};
-// 	$scope.removeContact = function(id){
-// 		EditContactFactory.removeContact(id);
-// 		$location.path('/');
-// 	};
-// });
+questions.controller('NewAnswer', function($scope, $routeParams, NewAnswerFactory){
+	NewAnswerFactory.getQuestion($routeParams.id, function(data){
+		$scope.question = data;
+	});
+});
