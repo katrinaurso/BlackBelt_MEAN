@@ -1,29 +1,30 @@
 var mongoose = require('mongoose');
-// var Contact = mongoose.model('Contact');
+var Question = mongoose.model('Question');
 
 module.exports = {
 	index: function(req, res){
-		res.render('index', {title: 'LifeRM'});		
+		res.render('index', {title: 'Ask Your Question, Get an Answer!'});		
 	},
-	// get_contacts: function(req, res){
-	// 	Contact.find(function(err, results){
-	// 		if(err) {
-	// 			res.send(err);
-	// 		} else {
-	// 			res.send(results);
-	// 		}
-	// 	});
-	// },
-	// add_contact: function(req, res){
-	// 	var a = new Contact(req.body);
-	// 	a.save(function(err, result){
-	// 		if(err){
-	// 			res.send(err);
-	// 		} else {
-	// 			res.send(result._id);
-	// 		}
-	// 	});
-	// },
+	get_questions: function(req, res){
+		Question.find(function(err, results){
+			if(err) {
+				res.send(err);
+			} else {
+				res.send(results);
+			}
+		});
+	},
+	add_question: function(req, res){
+		var a = new Question(req.body);
+		a.save(function(err, result){
+			if(err){
+				res.send(err);
+			} else {
+				res.send(result._id);
+			}
+		});
+	}
+
 	// get_pictures: function(req, res){
 	// 	Contact.find(function(err, results){
 	// 		if(err){

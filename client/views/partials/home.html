@@ -1,0 +1,19 @@
+    <div ng-controller="Home">
+      <input class="search" type="text" ng-model="filter_question" placeholder="Search"><span class="gray" ng-bind="filter_question"></span>
+      <table>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Answers</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr ng-repeat="question in questions | filter: filter_question | orderBy: 'created_at'"> 
+              <td ng-bind="question.question"></td>
+              <td ng-bind="question.answers.length">3</td>
+              <td><a href="#">Show</a> <a href="#">Answer</a></td>
+            </tr>
+          </tbody>
+      </table>
+    </div>

@@ -1,15 +1,17 @@
-var dash = require('./../controllers/dashboard.js');
+var questions = require('./../controllers/questions.js');
 
 module.exports = function Routes(app){
 	app.get('/', function(req, res){
-	  dash.index (req, res);
+	  questions.index (req, res);
 	});
-	// app.get('/get_contacts', function(req, res){
-	// 	dash.get_contacts(req, res);
-	// });
-	// app.post('/add_contact', function(req, res){
-	// 	dash.add_contact(req, res);
-	// });
+	app.get('/get_questions', function(req, res){
+		questions.get_questions(req, res);
+	});
+	app.post('/add_question', function(req, res){
+		questions.add_question(req, res);
+	});
+
+
 	// app.get('/get_pictures', function(req, res){
 	// 	dash.get_pictures(req, res);
 	// });

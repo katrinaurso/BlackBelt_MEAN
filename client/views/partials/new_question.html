@@ -1,0 +1,8 @@
+    <div ng-controller="NewQuestion">
+      <form ng-submit="addQuestion()">
+        <p>Question: <textarea ng-model="new_question.question"></textarea></p>
+        <p>Description: (optional) <textarea ng-model="new_question.description"></textarea></p>
+        <button ng-href="#/">Cancel</button>
+        <input type="submit" value="Submit">
+      </form>
+    </div>

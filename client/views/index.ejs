@@ -2,15 +2,17 @@
 <html>
 <head>
   <title><%= title %></title>
-  <!-- <script type="text/javascript" src="/javascripts/angular.js"></script>
+  <script type="text/javascript" src="/javascripts/angular.js"></script>
   <script type="text/javascript" src="/javascripts/angular-route.js"></script>
   <script type="text/javascript" src="/javascripts/app.js"></script>
   <script type="text/javascript" src="/javascripts/controllers.js"></script>
   <script type="text/javascript" src="/javascripts/factories.js"></script>
-  <link rel="stylesheet" href="/stylesheets/style.css"> -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body>
-  <h1>Welcome to the BlackBelt</h1>
-</body>
+<body ng-app="questions">
+  <a href="#/">Home</a> | <a href="#/new_question">Add a Question</a> <!-- Links to page views -->
+  <div ng-view="">
+
+  </div>
 </body>
 </html>

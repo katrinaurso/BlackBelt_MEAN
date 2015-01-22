@@ -1,24 +1,20 @@
-var dashboard = angular.module('dashboard', ['ngRoute']);
-dashboard.config(function($routeProvider){
+var questions = angular.module('questions', ['ngRoute']);
+questions.config(function($routeProvider){
 	$routeProvider
 	.when('/', {
-		templateUrl: 'views/partials/main.html',
-		controller: 'Main'
+		templateUrl: 'views/partials/home.html',
+		controller: 'Home'
 	})
-	.when('/new_contact', {
-		templateUrl: 'views/partials/new_contact.html',
-		controller: 'NewContact'
+	.when('/new_question', {
+		templateUrl: 'views/partials/new_question.html',
+		controller: 'NewQuestion'
 	})
-	.when('/contact/:id', {
-		templateUrl: 'views/partials/contact.html',
-		controller: 'MyContact'
+	.when('/question/:id', {
+		templateUrl: 'views/partials/question.html',
+		controller: 'Question'
 	})
-	.when('/edit_contact/:id', {
-		templateUrl: 'views/partials/edit_contact.html',
-		controller: 'EditContact'
-	});
+	.when('/question/:id/new_answer', {
+		templateUrl: 'views/partials/new_answer.html',
+		controller: 'NewAnswer'
+	});	
 });
-
-var contacts = [];
-var reminders = [];
-var tasks = [];
