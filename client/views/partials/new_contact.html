@@ -1,0 +1,41 @@
+ 		<div id="new_contact" ng-controller="NewContact">
+          <h1>Add A New Contact</h1>
+          <form ng-submit="addContact()">
+            <table>
+              <tr>
+                <td>First Name: </td>
+                <td><input class="add" type="text" ng-model="new_contact.first_name" placeholder="Contact First Name"></td>
+              </tr>
+              <tr>
+                <td>Last Name: </td>
+                <td><input class="add" type="text" ng-model="new_contact.last_name" placeholder="Contact Last Name"></td>
+              </tr>
+              <tr>
+                <td>Phone Number: </td>
+                <td><input class="add" type="text" ng-model="new_contact.phone" placeholder="Contact Phone Number"></td>
+              </tr>
+              <tr>
+                <td>Street Address: </td>
+                <td><input class="add" type="text" ng-model="new_contact.address.street" placeholder="Street Address"></td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td><input class="add" type="text" ng-model="new_contact.address.city" placeholder="City"></td>
+              </tr>
+              <tr>
+                <td>State: </td>
+                <td><input class="add" type="text" ng-model="new_contact.address.state" placeholder="State"></td>
+              </tr>
+              <tr>
+                <td>Zip Code: </td>
+                <td><input class="add" type="text" ng-model="new_contact.address.zip" placeholder="Zip"></td>
+              </tr>
+              <tr>
+                <td>Image: </td>
+                <td><input type="file" ng.model="new_contact.picture"></td>
+              </tr>
+           </table>
+            <input class="button green submit" type="submit" value="Add Contact!">
+            <p ng-repeat="error in errors" ng-bind="error.message"></p>
+          </form>
+        </div>
