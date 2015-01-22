@@ -7,7 +7,7 @@ var app = express();
 
 app.set('views', path.join(__dirname, 'client/views'));
 app.set('view engine', 'ejs');
-app.set('images', path.join(__dirname, 'client/images'));
+// app.set('images', path.join(__dirname, 'client/images'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

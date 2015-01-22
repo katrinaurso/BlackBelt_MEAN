@@ -13,19 +13,19 @@ var path = require('path'),
 	}
 module.exports = {
 	development: {
-		db: 'mongodb://localhost/LifeRM',
+		db: 'mongodb://localhost/MEAN_BlackBelt',
 		root: rootPath,
 		notifier: notifier,
 		app: {
-			name: 'LifeRM'
+			name: 'MEAN_BlackBelt'
 		}
 	},
 	test: {
-	    db: 'mongodb://localhost/LifeRM',
+	    db: 'mongodb://localhost/MEAN_BalckBelt',
 	    root: rootPath,
 	    notifier: notifier,
 	    app:{
-	      name: 'LifeRM Test'
+	      name: 'MEAN_Blackbelt'
 	    }
 	},
 	production: {}
