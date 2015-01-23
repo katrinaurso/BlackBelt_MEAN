@@ -58,6 +58,6 @@ module.exports = {
 	},
 	like_answer: function(req, res){
 		var query = { "answers._id" : req.params.id };
-		Question.update(query, { $set : { "answers.likes" : { $inc : { "answers.likes" : 1 }}}}).exec();
+		Question.update(query, { $inc : { "answers.$.likes" : 1 }}).exec();
 	}
 };
