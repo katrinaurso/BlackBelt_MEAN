@@ -24,6 +24,7 @@ questions.factory('NewQuestionFactory', function($http){
 		// 		return;
 		// 	}
 		// }
+		info.name = person;
 		$http.post('/add_question', info).success(function(output){
 			console.log(output);
 			// output = output.replace(/"/g, "");
@@ -59,6 +60,13 @@ questions.factory('NewAnswerFactory', function($http){
 		$http.get('/get_question/'+id).success(function(output){
 			question = output;
 			callback(question[0]);
+		});
+	};
+	factory.addAnswer = function(id, info){
+		info.id = id;
+		info.name = person;
+		$http.post('/add_answer', info).success(function(output){
+			console.log(output);
 		});
 	};
 	return factory;

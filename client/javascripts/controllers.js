@@ -21,4 +21,7 @@ questions.controller('NewAnswer', function($scope, $routeParams, NewAnswerFactor
 	NewAnswerFactory.getQuestion($routeParams.id, function(data){
 		$scope.question = data;
 	});
+	$scope.addAnswer = function(id){
+		NewAnswerFactory.addAnswer(id, $scope.new_answer);
+	};
 });

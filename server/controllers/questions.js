@@ -41,6 +41,20 @@ module.exports = {
 				res.send(results);
 			}
 		});
+	},
+	add_answer: function(req, res){
+		var query = { _id :  req.body.id };
+		var data = {};
+		data.answer = req.body.answer;
+		data.details = req.body.details;
+		data.name = req.body.name;
+		Question.update(query, { $addToSet : { answers : data }}, function(err, status){
+			if(err){
+				res.send(err);
+			} else {
+				res.sendStatus(status);
+			}
+		});
 	}
 
 	// get_pictures: function(req, res){
