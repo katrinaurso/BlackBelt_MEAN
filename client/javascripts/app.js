@@ -18,3 +18,5 @@ questions.config(function($routeProvider){
 		controller: 'NewAnswer'
 	});	
 });
+
+var questions_array = [];

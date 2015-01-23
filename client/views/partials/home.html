@@ -1,3 +1,9 @@
+    <script type="text/javascript">
+      // if(success_message === true) {
+      //   alert('Question added successfully!');
+      //   success_message = false;
+      // }
+    </script> 
     <div ng-controller="Home">
       <input class="search" type="text" ng-model="filter_question" placeholder="Search"><span class="gray" ng-bind="filter_question"></span>
       <table>
@@ -9,7 +15,7 @@
           </tr>
         </thead>
           <tbody>
-            <tr ng-repeat="question in questions | filter: filter_question | orderBy: 'created_at'"> 
+            <tr ng-repeat="question in questions | filter: filter_question | orderBy: 'created_at':true"> 
               <td ng-bind="question.question"></td>
               <td ng-bind="question.answers.length">3</td>
               <td><a href="#/question/{{question._id}}">Show</a> <a href="#/question/{{question._id}}/new_answer">Answer</a></td>

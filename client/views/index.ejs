@@ -8,14 +8,14 @@
   <script type="text/javascript" src="/javascripts/controllers.js"></script>
   <script type="text/javascript" src="/javascripts/factories.js"></script>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <script type="text/javascript">
+    var person = prompt("Please enter your name");
+    // var success_message = false;
+  </script>
 </head>
 <body ng-app="questions">
-  <a href="#/">Home</a> | <a href="#/new_question">Add a Question</a> <!-- Links to page views -->
+  <a href="#/">Home</a> | <a href="#/new_question">Add a Question</a>
   <div ng-view="">
-
   </div>
 </body>
- <script type="text/javascript">
-    var person = prompt("Please enter your name");
-  </script>
 </html>

@@ -2,13 +2,13 @@
       <h1 ng-bind="answers.question"></h1>
       <h4 ng-bind="answers.description"></h4>
       <table>
-        <tr ng-repeat="answer in answers.answers | orderBy: 'likes'">
+        <tr ng-repeat="answer in answers.answers | orderBy: 'likes' | orderBy: 'created_at':true">
           <td>
             <p ng-bind="answer.name"></p>
-            <p ng-bind="answer.answer"></p>
-            <p ng-bind="answer.details"></p>
+            <h3 ng-bind="answer.answer"></h3>
+            <h4 ng-bind="answer.details"></h4>
           </td>
-          <td ng-bind="answer.answer"></td>
+          <td>{{answer.likes}} Likes</td>
           <td><button ng-click="likeAnswer(answer._id)">Like!</button></td>
         </tr>
       </table>

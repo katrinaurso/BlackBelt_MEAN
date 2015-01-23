@@ -1,8 +1,9 @@
     <div ng-controller="NewQuestion">
+      <p ng-bind="errors.message"></p>
       <form ng-submit="addQuestion()">
         <p>Question: <textarea ng-model="new_question.question"></textarea></p>
         <p>Description: (optional) <textarea ng-model="new_question.description"></textarea></p>
-        <button ng-href="#/">Cancel</button>
+        <a ng-href="#/">Cancel</a>
         <input type="submit" value="Submit">
       </form>
     </div>
